@@ -222,6 +222,17 @@ const mudiExperience = ({
       'marca': 'Rooms',
       'categoria': document.querySelectorAll('[itemprop="name"]')[1].innerHTML
     });
+
+    document.querySelector('.btnAddToCart').addEventListener('click',()=>{
+      dataLayer.push({
+        'event':'Intensión de compra MUDI',
+        'name': document.querySelector('.product-single__title').innerHTML,
+        'sku': numberSku,
+        'color':document.querySelector('.currentSwatch span .innerText').innerHTML,
+        'categoria': document.querySelectorAll('[itemprop="name"]')[1].innerHTML
+      })
+    })
+    
   }
   
   // Se inicializa el proceso de petición y respuesta Mudi 3D&ARComerce
